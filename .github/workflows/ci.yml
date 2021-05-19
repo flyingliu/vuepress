@@ -16,6 +16,15 @@ jobs:
           npm install
           npm run build
 
+      - name: Set the value
+        id: step_one
+        run: |
+          echo "action_state=yellow" >> $GITHUB_ENV
+      - name: Use the value
+        id: step_two
+        run: |
+          echo "${{ env.action_state }}" # This will output 'yellow'
+
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
