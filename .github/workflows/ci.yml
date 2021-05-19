@@ -9,9 +9,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - run: npm install
-    - run: npm run build
-    - run: cp CNAME docs/.vuepress/dist/
+    - run: yarn
+    - run: yarn build
     
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v2.5.0
